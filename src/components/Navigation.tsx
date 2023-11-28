@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { NavLink, INavigationDictionary } from '../types';
 
-// TODO: remove this line
-
 const navigationLinks = Object.entries(NavLink).map(([label, href]) => ({
   label: label as keyof typeof NavLink,
   href,
