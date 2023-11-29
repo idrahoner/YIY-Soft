@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'ua' }, { lang: 'en' }];
+  return [{ lang: 'en' }, { lang: 'ua' }];
 }
 
 export default async function RootLayout({
