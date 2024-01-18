@@ -16,6 +16,7 @@ const config: Config = {
         'light-accent': 'var(--light-accent)',
         active: 'var(--active)',
         'semi-transparent': 'var(--semi-transparent)',
+        'semi-bg': 'var(--semi-bg)',
         placeholder: 'var(--placeholder)',
       },
       fontSize: {
