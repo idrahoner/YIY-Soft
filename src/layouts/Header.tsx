@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import Container from './Container';
 import MobileMenu from './MobileMenu';
@@ -11,10 +13,23 @@ interface IProps {
 }
 
 export default function Header({ dictionary }: IProps) {
+  const [bgColor, setBgColor] = useState('bg-semi-transparent');
+
+  if (typeof window !== 'undefined') {
+    const changeBgColor = () => {
+      window.scrollY < 150
+        ? setBgColor('bg-semi-transparent')
+        : setBgColor('bg-semi-bg');
+    };
+
+    window.addEventListener('scroll', changeBgColor);
+  }
+
   return (
     <header
-      className="fixed left-0 top-0 z-50 w-full items-center 
-                 bg-semi-transparent py-3 backdrop-blur-[2px]"
+      className={`fixed left-0 top-0 z-50 w-full 
+                 items-center  py-3 
+                 backdrop-blur-[2px] duration-1000 ${bgColor}`}
     >
       <Container>
         <div className="flex">
